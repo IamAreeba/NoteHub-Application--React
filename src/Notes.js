@@ -192,3 +192,18 @@ will just change the connection string
 
 
 */
+
+// ========================== 06 ============================= //
+/*
+  . Previously we have seen how to insert data if our mongoose model is built
+  . Now we are doing validation to do validation we use express validator and package is: npm install express-validator.
+    We have take array destructuring syntax from express website and write it on auth.js. 
+  . We make an array in router.post
+  . Errors : POST, ValidationResult
+  . We can write our own custom message cuz the message we are getting before is a object which is returned by Express 
+  We must write this validation layer
+  And also we have to write promise. So it will be save in DB and user will be send to me through res
+  So we have saved the data but i have marked email as unique. But still he is saving data in DB with same email
+  So first create new DB and make indexes in User.js. Now you cant enter user with same email
+
+*/
