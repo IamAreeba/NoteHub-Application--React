@@ -81,7 +81,8 @@ We have to push backend nodemodules folder in .gitnore file
 
 . And we have run the index.js after writing code. In console we have to write npm i -D nodemon. Why use -D cuz i want that to be as
   devDependencies in my app. I dont it to be a part of my application
-. Then write nodemon  .\index.js. After running this we get what inside that db.js func. So our connection is running 
+
+. Then write nodemon .\index.js. After running this we get what inside that db.js func. So our connection is running 
 . But this index.js will be our Express server. So goto express.js website and take boiler plate code and write in index.js. After writing
   this our console automatically restart.
   First index.js code will run then db.js code will run although it is written at the top cuz mongo take time to connect.
@@ -96,6 +97,62 @@ will just change the connection string
 . We have made only one end point with app.get() which is returning Hello Areeba. But our NoteHub need more end point to write in MongoDB, end 
   points to authenticate user, which user is connected when, and how many notes of which user to fetch
 . What ever the notes we have written we have to fetch that and show in our React UI
+
+. Our nodemon version has changed so we have used different func
+
+
+*/
+
+// ========================== 04 ============================= //
+/*
+  . We are talking about app structure
+  . I can write all my routes in index.js. Like Login, SignUp etc. And when i navigate to that URI i will get what i have written inside it
+  . But we make all that routes in individual files like login, signup etc
+          app.get('/api/v1/login', (req, res) => {
+            res.send('Hello Login!')
+          })
+          URI: http://localhost:3000/api/v1/Login
+
+          app.get('/api/v1/signup', (req, res) => {
+            res.send('Hello SignUp!')
+          })
+          URI: http://localhost:3000/api/v1/SignUp
+
+  . What will be inside our app ?  All Mongoose models
+  Maintain good folder structure
+  DB ==> Collections or Multiple Collections ==> Documents(JSON)
+  e.g
+  Family ==> Areeba / Areeba Aiman ==> id, name, email etc.
+
+  MongoDB has pros and corns:
+    Pros: Can write data in anyways
+    Corns: our app management will be disturb with this
+  So the main Advanatage of Mongoos is that he says you run your app i'll manage all your DB work
+
+  So we only make models in our app.
+  User.JS: User who always do login
+
+  module.exports = mongoose.model("user", UserSchema)   ==> Making schema through models 
+  28 Line => Model name and schema name 
+  We are making the schemas and later we use them in routes
+  tag: college work, To Do item etc
+  ./ : Current folder
+
+  We have made 2 schemas: User.js and Notes.js and put it inside models. Cuz we have made the models using schema
+  We use app.use to link to routes
+  require: making individual route file
+  Inside auth and notes.js we use router 
+  previosuly we were using app.get() but now we are using router.get()
+  so after writing /api/auth we can get remaining path from routes/auth.js
+  All Authentication endpoint we'll write on auth.js
+  All notes endpoint we'll write on notes.js
+  We have made schema from notes model and user.js se model banaya
+  Schema: Logical connection of DB object
+  By using mongoose we get free validations
+  Later we make those end points which our React app uses
+  e.g. 
+      Login endpoint, signup endpoint, notes fetch delete, whole notes crud
+
 
 
 
