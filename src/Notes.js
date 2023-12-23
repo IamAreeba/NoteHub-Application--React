@@ -119,42 +119,76 @@ will just change the connection string
           URI: http://localhost:3000/api/v1/SignUp
 
   . What will be inside our app ?  All Mongoose models
-  Maintain good folder structure
-  DB ==> Collections or Multiple Collections ==> Documents(JSON)
-  e.g
-  Family ==> Areeba / Areeba Aiman ==> id, name, email etc.
-
-  MongoDB has pros and corns:
-    Pros: Can write data in anyways
+  . Maintain good folder structure
+  . DB ==> Collections or Multiple Collections ==> Documents(JSON)
+    e.g
+  . Family ==> Areeba / Areeba Aiman ==> id, name, email etc.
+  
+  . MongoDB has pros and corns:
+    Pros: Can write data in any way
     Corns: our app management will be disturb with this
-  So the main Advanatage of Mongoos is that he says you run your app i'll manage all your DB work
+  . So the main Advanatage of Mongoos is that he says you run your app i'll manage all your DB work
 
-  So we only make models in our app.
-  User.JS: User who always do login
+  . So we only make models in our app.
+  . User.JS: User who always do login
 
-  module.exports = mongoose.model("user", UserSchema)   ==> Making schema through models 
-  28 Line => Model name and schema name 
-  We are making the schemas and later we use them in routes
-  tag: college work, To Do item etc
-  ./ : Current folder
-
-  We have made 2 schemas: User.js and Notes.js and put it inside models. Cuz we have made the models using schema
-  We use app.use to link to routes
-  require: making individual route file
-  Inside auth and notes.js we use router 
-  previosuly we were using app.get() but now we are using router.get()
-  so after writing /api/auth we can get remaining path from routes/auth.js
-  All Authentication endpoint we'll write on auth.js
-  All notes endpoint we'll write on notes.js
-  We have made schema from notes model and user.js se model banaya
-  Schema: Logical connection of DB object
-  By using mongoose we get free validations
-  Later we make those end points which our React app uses
+  . module.exports = mongoose.model("user", UserSchema)   ==> Making schema through models 
+  . 28 Line => Model name and schema name 
+  . We are making the schemas and later we use them in routes
+  . tag: college work, To Do item etc
+  . ./ : Current folder
+ 
+  . We have made 2 schemas: User.js and Notes.js and put it inside models. Cuz we have made the models using schema
+  . We use app.use to link to routes
+  . require: making individual route file
+  . Inside auth and notes.js we use router 
+  . previosuly we were using app.get() but now we are using router.get()
+  . so after writing /api/auth we can get remaining path from routes/auth.js
+  . All Authentication endpoint we'll write on auth.js
+  . All notes endpoint we'll write on notes.js
+  . We have made schema from notes model and user.js se model banaya
+  . Schema: Logical connection of DB object
+  . By using mongoose we get free validations
+  . Later we make those end points which our React app uses
   e.g. 
       Login endpoint, signup endpoint, notes fetch delete, whole notes crud
 
+*/
 
+// ========================== 05 ============================= //
+/*
+  . In auth.js inside router.get we are only sending response we are not sending request thats why we get undefined in console and when we  tested the URI in ThunderClient we have seen hello Areeba
+      router.get('/', (req, res) => {
+        console.log("Request" , req.body)
+    })
 
+  . How to send any thing in Request body ? 
+  . Why undefined cuz we havent added anything in request body (In thunder client)
+  . To see the request in console write something in request body through  (Thunder Client)  and also we have to use middle-ware in index.js
+    and also set the header
+  . Now i can deal in Json. Make request in Json
+
+  . Now we are working on endpoints auth.js
+    . First thing we have to do in our api is to "create a user"
+
+  . It doesnt require authentication cuz i can see it clearly that " If this endpoint require logged in or not "
+  . Now to create user i have send user data. To send user data like name, gender see the User model. 
+  . Never send password in plain text 
+  . So in the above i have basically made end point to create User. But i havent use the User. So taking User model in Routes.
+        const User = require('../models/User')
+  . Now how to create new user how ? 
+        const user = User(req.body)
+        user.save()
+  . And also import schema from mongoose : const { Schema } = mongoose; in User 
+  . Now see does your user entered in DB Yes. But How using user.save() in index.js
+  . If i hit the URI again it will populate the same data means new obj is created but with different ID 
+  . If i dont pass name and write phone in place of email my app will crash. So i must have some kind of system to check that the work is 
+     correct or not. So i have to use some kind of validation. Good validation is Identity of application
+  . Cuz you dont want anything bad happen with your end point
+  . Replace Router.get with Router.post. Cuz i dont want all the data in the URL
+  . Use POST cuz we are sending the data like password. If we send data using Get maybe inside your log file your password will appear. cuz
+    your password URL ke saat hi jaie ga if we are using Get. Or if data is alot so use POST 
+  . For validation we use Express Validator
 
 
 */
