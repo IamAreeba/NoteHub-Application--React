@@ -1,4 +1,4 @@
-
+  
 
 // ========================== 01 ============================= //
 /*
@@ -38,10 +38,11 @@
 
 . Now we are setting up backend using: npm init
 . We have to give name to our backend and we have initialized repo. And our package.json is made
-Downloading packages:
-. write => npm i express: for express server
-. Write => npm i mongoose:
-    Mongoose is basically abstraction layer on top of MongoDB. It help to connect to our Node.JS app. We can make models using this package
+. Now we download packages
+  Downloading packages:
+    . write => npm i express: for express server
+    . Write => npm i mongoose 
+        Mongoose is basically abstraction layer on top of MongoDB. It help to connect to our Node.JS app. We can make models using this package
 
 Made index.js for entry point of our app
 So we have made Node.JS backend it has no connection with React app. We'll connect react app with this. But this is a separate entity.
@@ -58,7 +59,7 @@ We have to push backend nodemodules folder in .gitnore file
   node module folder of it.
 . We are not pushing nodemodule folder in it
 . Now we are working with backend for this we have install 2 packages express and mongooes
-. Mongoose: Mongoose is made on top of MongoDB cuz we face MongoDB validation, casting, business logics etc
+. Mongoose: Mongoose is made on top of MongoDB cuz we face MongoDB validation, casting, business logics problems etc
 . In MongoDB we are using local DB. Means data will be on our computer. So when we fill the things manually it will give me local connection 
   string and we have to use it or parse it in our project to connect to Mongooes 
 . So our main work is to connect to Mongooes. We have get the local connection string from MongoDB Compass
@@ -80,7 +81,7 @@ We have to push backend nodemodules folder in .gitnore file
 . We have to export the func. ==> 4 line
 
 . And we have run the index.js after writing code. In console we have to write npm i -D nodemon. Why use -D cuz i want that to be as
-  devDependencies in my app. I dont it to be a part of my application
+  devDependencies in my app. I dont want it to be a part of my application
 
 . Then write nodemon .\index.js. After running this we get what inside that db.js func. So our connection is running 
 . But this index.js will be our Express server. So goto express.js website and take boiler plate code and write in index.js. After writing
@@ -196,7 +197,9 @@ will just change the connection string
 // ========================== 06 ============================= //
 /*
   . Previously we have seen how to insert data if our mongoose model is built
+
   . Now we are doing validation to do validation we use express validator and package is: npm install express-validator.
+
     We have take array destructuring syntax from express website and write it on auth.js. 
   . We make an array in router.post
   . Errors : POST, ValidationResult
@@ -205,5 +208,29 @@ will just change the connection string
   And also we have to write promise. So it will be save in DB and user will be send to me through res
   So we have saved the data but i have marked email as unique. But still he is saving data in DB with same email
   So first create new DB and make indexes in User.js. Now you cant enter user with same email
+
+*/
+
+// ========================== 07 ============================= //
+/* OBJECT: How to make collections in Thunder Client
+  . Since we have made the index corresponding to email cuz we want that to be unique. And we dont want that index so we had to write the 
+    logic in auth.js for unique email
+  . We'll not use .then and .catch cuz we are using async await
+  . Maybe we get different error rather then 'Please enter a unique value for email' so we dont use this response we have to fix this
+  . We have basically applied the methos on our User model
+  . findOne: This is a method provided by Mongoose that allows you to find a single document in the specified collection that matches the given  criteria. It takes an object as an argument, where the keys and values define the conditions the document must meet.
+  . { email: req.body.email }: This is the criteria for the query. In this example, it's searching for a document in the "users" collection where the value of the "email" field matches the value provided in the req.body.email variable. This is commonly used in authentication scenarios, where you're checking if a user with a specific email address already exists.
+  . Also we are changing the port
+  . Made a notehub collection in Thunder Client => Then Folder of Authentication => Made a request and wrote an endpoint in the URL
+  . Collection: making collection of end point which has link with application or particular thing in app
+  . We usually write errors in Logger and SQS but here wr are handling it with try catch
+  . We can export this endpoint as json and use any where
+  . We'll increase collection and endpoints later
+  . We have to do a work in whic user can login in our backend api for this we use JWT authentication then our notes model we have to use enter 
+    notes and we had to make sure that user can only enter his/her notes and do CRUD operations
+
+  
+    
+
 
 */
