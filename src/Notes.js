@@ -264,3 +264,14 @@ In res we have send auth token. If some body give me this auth token i can conve
 
 */
 
+
+// ========================== 10 ============================= //
+/*
+  Making new endpoint in auth.js which is authenticate a user means no login required
+  We use destructuring method to get the email password from DB
+                                
+
+
+
+
+*/
