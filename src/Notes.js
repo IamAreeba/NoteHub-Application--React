@@ -198,7 +198,8 @@ will just change the connection string
 /*
   . Previously we have seen how to insert data if our mongoose model is built
 
-  . Now we are doing validation to do validation we use express validator and package is: npm install express-validator.
+  . Now we are doing validation to do validation we use express validator and package is: 
+    npm install --save express-validator.
 
     We have take array destructuring syntax from express website and write it on auth.js. 
   . We make an array in router.post
@@ -217,7 +218,7 @@ will just change the connection string
     logic in auth.js for unique email
   . We'll not use .then and .catch cuz we are using async await
   . Maybe we get different error rather then 'Please enter a unique value for email' so we dont use this response we have to fix this
-  . We have basically applied the methos on our User model
+  . We have basically applied the methods on our User model
   . findOne: This is a method provided by Mongoose that allows you to find a single document in the specified collection that matches the given  criteria. It takes an object as an argument, where the keys and values define the conditions the document must meet.
   . { email: req.body.email }: This is the criteria for the query. In this example, it's searching for a document in the "users" collection where the value of the "email" field matches the value provided in the req.body.email variable. This is commonly used in authentication scenarios, where you're checking if a user with a specific email address already exists.
   . Also we are changing the port
@@ -229,8 +230,37 @@ will just change the connection string
   . We have to do a work in whic user can login in our backend api for this we use JWT authentication then our notes model we have to use enter 
     notes and we had to make sure that user can only enter his/her notes and do CRUD operations
 
-  
-    
+*/
+
+// ========================== 07 ============================= //
+/*
+. We use bicrypt.js to do hashing and do salting
+. We'll make User route secure
+
+*/
+
+// ========================== 09 ============================= //
+/*
+bicrypt.js help to generate password hash, salt, pepper.
+We have install the package of bcryptjs: npm install bcryptjs
+
+And also we have used array destructuring: const bcrypt = require('bcryptjs')
+We use bicrypt.js hash func whic return promise
+Whenever there is await means we are waiting for ans and then move to next line
+So now we have created hash of password.
+Whenever someone login what will i give him in return: Token
+Lots of token we have mechanism for authentication:
+    . Session Token
+    . JWT(Json Web Token) 
+Install package: npm i jsonwebtoken
+What is JWT? A way to verify the user cuz user he will not give me id and password every time.
+            Suppose the user has authenticated to my website i will give him token 
+
+JWT provides authentication for client and server discussion 
+Now i want to send user in return ID cuz in my DB i have index on ID and i can verify that token when request comes on server
+In res we have send auth token. If some body give me this auth token i can conver it in user:{ id: user.id } this data and i can slos find that
+  using my JWT secret that does anyone have did any thing with this or not,
 
 
 */
+
