@@ -269,9 +269,16 @@ In res we have send auth token. If some body give me this auth token i can conve
 /*
   Making new endpoint in auth.js which is authenticate a user means no login required
   We use destructuring method to get the email password from DB
-                                
 
+*/
 
+// ========================== 11 ============================= //
+/*
+  We have to send JWT Token. We have to get auth token and fetch all details
+  I can select every field from select except password
+  Jo request ye mangti hain ke user authenticate hona chaiye so i will send header of name authentication token. And whatever data i have in header i will fetch that 
+  I have to decode authToken and fetch ID . We do this using middleWare. So whenever we have any request in login routes we call middleware func
+  
 
 
 */
