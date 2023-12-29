@@ -278,7 +278,14 @@ In res we have send auth token. If some body give me this auth token i can conve
   I can select every field from select except password
   Jo request ye mangti hain ke user authenticate hona chaiye so i will send header of name authentication token. And whatever data i have in header i will fetch that 
   I have to decode authToken and fetch ID . We do this using middleWare. So whenever we have any request in login routes we call middleware func
-  
 
+*/
+
+// ========================== 12 ============================= //
+/*
+  This route will fetch user notes who are already logged in
+  This is going to be Get request and we have to take token from header
+  This is a Get Request so we dont have to write Query Parameters
+  I have to associate notes with user so that other user cant see anyone notes. So we have to add user field in Notes model
 
 */
