@@ -289,3 +289,12 @@ In res we have send auth token. If some body give me this auth token i can conve
   I have to associate notes with user so that other user cant see anyone notes. So we have to add user field in Notes model
 
 */
+
+
+// ========================== 13 ============================= //
+/*
+  If we are updating something then we must required login
+  We use PUT request for updation
+  You can update the notes only when you are the owner/user for that note and aslo they must be loggedin for this purpose we do validation
+
+*/
