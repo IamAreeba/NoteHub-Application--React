@@ -298,3 +298,9 @@ In res we have send auth token. If some body give me this auth token i can conve
   You can update the notes only when you are the owner/user for that note and aslo they must be loggedin for this purpose we do validation
 
 */
+
+// ========================== 14 ============================= //
+/*
+  Deleting the note by changing the update method
+
+*/
