@@ -321,3 +321,10 @@ In res we have send auth token. If some body give me this auth token i can conve
   But O2 needs login so we have to pass login in O2 through offers. Although Offers doesnt need login
 
 */
+
+// ========================== 19 ============================= //
+/*
+  useLocation hook is in react router. If u run the func useEffect yo'll get this:
+  {pathname: '/about', search: '', hash: '', state: null, key: 'qkjvcv7w'}
+
+*/

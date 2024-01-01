@@ -5,24 +5,30 @@ import NoteState from '../context/notes/NoteState'
 import { useEffect } from 'react'
 
 const About = () => {
+  /*
+      const a = useContext(noteContext)
+      useEffect(() => {
+        a.update()
+        // eslint-disable-next-line
 
-  const a = useContext(noteContext)
-
-  useEffect(() => {
-    a.update()
-    // eslint-disable-next-line
-
-
-  }, [])
-  
-
+      }, [])
+      
+      return (
+        <div>
+          This is About {a.state.name}. A girl who is {a.state.class}
+        </div>
+      )
+  */
 
 
   return (
     <div>
-      This is About {a.state.name}. A girl who is {a.state.class}
+      This is About page
     </div>
   )
+
+
+
 }
 
 export default About
