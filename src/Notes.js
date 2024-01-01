@@ -311,3 +311,13 @@ In res we have send auth token. If some body give me this auth token i can conve
   Concrruently: If u have to run alot of server u can do this by using concrruently
 
 */
+
+// ========================== 17 ============================= //
+/*
+  React App made up of state and components
+  Make all the states in App.js in JS object. But this appraoch also has problem. If we need login in Offers state then we have 
+  to pass it through prop drilling like below:
+  <Offers login={ login } />
+  But O2 needs login so we have to pass login in O2 through offers. Although Offers doesnt need login
+
+*/
