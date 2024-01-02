@@ -46,6 +46,60 @@ const NoteState = (props) => {
             "tag": "personal",
             "date": "2024-01-01T12:48:48.363Z",
             "__v": 0
+        },
+        {
+            "_id": "6592b4b0c11baf7c6a392543",
+            "user": "658d173a59470039f493ee79",
+            "title": "My title here",
+            "description": "Please wake up early in the morning",
+            "tag": "personal",
+            "date": "2024-01-01T12:48:48.363Z",
+            "__v": 0
+        },
+        {
+            "_id": "6592b4b0c11baf7c6a392543",
+            "user": "658d173a59470039f493ee79",
+            "title": "My title here",
+            "description": "Please wake up early in the morning",
+            "tag": "personal",
+            "date": "2024-01-01T12:48:48.363Z",
+            "__v": 0
+        },
+        {
+            "_id": "6592b4b0c11baf7c6a392543",
+            "user": "658d173a59470039f493ee79",
+            "title": "My title here",
+            "description": "Please wake up early in the morning",
+            "tag": "personal",
+            "date": "2024-01-01T12:48:48.363Z",
+            "__v": 0
+        },
+        {
+            "_id": "6592b4b0c11baf7c6a392543",
+            "user": "658d173a59470039f493ee79",
+            "title": "My title here",
+            "description": "Please wake up early in the morning",
+            "tag": "personal",
+            "date": "2024-01-01T12:48:48.363Z",
+            "__v": 0
+        },
+        {
+            "_id": "6592b4b0c11baf7c6a392543",
+            "user": "658d173a59470039f493ee79",
+            "title": "My title here",
+            "description": "Please wake up early in the morning",
+            "tag": "personal",
+            "date": "2024-01-01T12:48:48.363Z",
+            "__v": 0
+        },
+        {
+            "_id": "6592b4b0c11baf7c6a392543",
+            "user": "658d173a59470039f493ee79",
+            "title": "My title here",
+            "description": "Please wake up early in the morning",
+            "tag": "personal",
+            "date": "2024-01-01T12:48:48.363Z",
+            "__v": 0
         }
     ]
 

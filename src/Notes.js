@@ -333,3 +333,11 @@ In res we have send auth token. If some body give me this auth token i can conve
 /*
 
 */
+
+
+// ========================== 21 ============================= //
+/*
+  Made Notes component and whatever related to notes we have written we have to write it on Notes component
+  
+
+*/
