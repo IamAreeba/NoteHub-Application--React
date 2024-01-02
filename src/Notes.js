@@ -349,3 +349,14 @@ In res we have send auth token. If some body give me this auth token i can conve
   
 
 */
+
+
+// ========================== 23 ============================= //
+/*
+  Now we have to make the icons functional. We will do it in NotesState. We dont use setNotes rather we use func to 
+  do work
+  In Header we will give token which from which we'll find what user he is
+  concat returns an array whereas push updates an array
+  
+
+*/

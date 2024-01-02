@@ -21,7 +21,7 @@ const Noteitem = (props) => {
 
                         </div>
 
-                        <p className="card-text">{note.description} Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero ab cumque porro! Blanditiis, consectetur quam.</p>
+                        <p className="card-text">{note.description}</p>
                     </div>
                 </div>
 
