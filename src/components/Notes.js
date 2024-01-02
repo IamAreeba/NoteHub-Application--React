@@ -16,7 +16,7 @@ import Noteitem from './Noteitem'
             <h1>Your Notes: </h1>
             {notes.map((note) => {
                 // return note.title
-                return <Noteitem note={note} />
+                return <Noteitem key={note.id} note={note} />
             })}
 
         </div>

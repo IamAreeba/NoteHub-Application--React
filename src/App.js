@@ -9,6 +9,7 @@ import {
   Route,
 
 } from "react-router-dom";
+import Alert from "./components/Alert";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Router>
 
           <Navbar />
+          <Alert message="This is Amazing" />
 
           <div className="container">
 

@@ -337,7 +337,15 @@ In res we have send auth token. If some body give me this auth token i can conve
 
 // ========================== 21 ============================= //
 /*
-  Made Notes component and whatever related to notes we have written we have to write it on Notes component
+  Made Notes component and whatever related to notes we have written we have to write it on Notes component 
+
+*/
+
+// ========================== 22 ============================= //
+/*
+  Used diff icons. Reused the Alert component
+  From submit we can create note, from Your Notes heading we can view the notes and for update and delete 
+  we write logic and we have icons fro that. An dalso we have to show in alert as well that note is deleted etc
   
 
 */
