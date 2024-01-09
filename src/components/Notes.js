@@ -9,13 +9,13 @@ import AddNote from './AddNote'
     const context = useContext(noteContext)
     // const {notes, setNotes} = context
     const {notes, addNote} = context
-
+    
 
 
    return (
      <>
         <AddNote />
-        <div className="container row my-3">
+        <div className="container row ">
             <h1>Your Notes: </h1>
             {notes.map((note) => {
                 // return note.title

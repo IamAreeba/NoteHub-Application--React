@@ -14,6 +14,7 @@ const AddNote = () => {
         addNote(note.title, note.description, note.tag) 
     }
 
+    // ...note. these 3 dots are basically spread operators
     const onChange = (e) => {
         setNote({...note, [e.target.name]: e.target.value})
     }
@@ -25,19 +26,19 @@ const AddNote = () => {
                 <h1>Add a Note</h1>
                 <form className='my-3'>
                     <div className="mb-3">
-                        <label htmlFor="title" className="form-label" onChange={onChange} >Title</label>
-                        <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" />
+                        <label htmlFor="title" className="form-label" >Title</label>
+                        <input type="text" className="form-control" id="title" name="title" onChange={onChange} aria-describedby="emailHelp" />
 
                     </div>
                     <div className="mb-3">
                         <label htmlFor="description" className="form-label">Description</label>
-                        <input type="text" className="form-control" id="desc" name='desc' onChange={onChange} />
+                        <input type="text" className="form-control" id="desc" name='description' onChange={onChange} />
                     </div>
                     <div className="mb-3 form-check">
                         <input type="checkbox" className="form-check-input" id="exampleCheck1" />
                         <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                     </div>
-                    <button type="submit" className="btn btn-primary" onClick={handleClick} >Submit</button>
+                    <button type="submit" className="btn btn-primary" onClick={handleClick} >Add Notes </button>
                 </form>
 
             </div>

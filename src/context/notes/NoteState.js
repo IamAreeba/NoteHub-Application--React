@@ -1,4 +1,4 @@
-import react, { useState } from "react"
+import React, { useState } from "react"
 import NoteContext from "./noteContext"
 
 
@@ -22,6 +22,7 @@ const NoteState = (props) => {
             }
             return (
                 <NoteContext.Provider value={{state, update}}>
+                 
                     {props.children}
                 </NoteContext.Provider>
             )
@@ -36,7 +37,8 @@ const NoteState = (props) => {
             "description": "Please wake up early",
             "tag": "personal",
             "date": "2023-12-31T11:52:54.494Z",
-            "__v": 0
+            "__v": 0,
+            "date": "2020-12"
         },
         {
             "_id": "6592b4b0c11baf7c6a392543",
@@ -109,7 +111,7 @@ const NoteState = (props) => {
     const addNote = (title, description, tag) => {
 
         // TODO: API call
-        console.log("Adding a new note")
+        // console.log("Adding a new note")
         const note = {
             "_id": "6592b4b0c11baf7c6a392543",
             "user": "658d173a59470039f493ee79",
@@ -127,12 +129,15 @@ const NoteState = (props) => {
 
 
     // Delete a Note
-    const deleteNote = () => {
-
+    const deleteNote = (id) => {
+        // TODO: API call
+        console.log("Deleting note with is " + id)
+        const newNote = notes.filter((note) => { return note._id !== id })
+        setNotes(newNote)
     }
 
     // Edit Note
-    const editNote = () => {
+    const editNote = (id, title, description, tag) => {
 
     }
 
