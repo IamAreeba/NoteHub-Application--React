@@ -3,10 +3,17 @@
 const connectToMongo = require('./db')
 const express = require('express')
 
+// CORS POLICY
+var cors = require('cors')
+
 connectToMongo();
 
 const app = express()
 const port = 5000
+
+// CORS POLICY
+app.use(cors())
+
 
 /* Routes Eg.
     app.get('/', (req, res) => {

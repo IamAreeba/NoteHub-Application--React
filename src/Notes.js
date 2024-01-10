@@ -368,3 +368,18 @@ In res we have send auth token. If some body give me this auth token i can conve
 
 */
 
+// ========================== 25 ============================= //
+/*
+  First we have to make Edit functionality then we have to do Fetch API calls. We will edit by using for loop
+  We have made the edit function now to do API calls we have to use Fetch API. And for this we have to make function 
+  but we are making the function work in the Edit function.
+  We have made the global var host for which we can change the host and copying the url of UpdateNotes.
+  So whatever we have did in the backend like all work of API we are doing that i client side
+  But we have error of CORS Policy. He say that browser se API request hum nahi kar sakte. So we are installing a package
+  in backend 'npm install cors'. Cuz it has no relation with frontend and also adding some lines in index.js
+  But still we are getting errors of key. So now all notes has to be fetch from Fetch API
+  So notesInitial we update using Fetch API. So we are making Get All Notes function
+
+
+*/
+
