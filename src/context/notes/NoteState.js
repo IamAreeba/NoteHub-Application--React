@@ -65,31 +65,31 @@ const NoteState = (props) => {
             headers: {
                 'Content-Type': 'application/json',
                 'auth-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU4ZDE3M2E1OTQ3MDAzOWY0OTNlZTc5In0sImlhdCI6MTcwMzc0ODg0Nn0.8Y0nby8aA4XXadmcjjDr6J1W7P3fGS2LlvjWWxfsdAY"
-            },
+            } 
             
         })
 
         // It will parse JSON and also it is an async func
         const json = await response.json()
-        console.log(json)
+        // console.log(json)
         setNotes(json)
     }
-
+ 
     // Add a Note
     const addNote = async (title, description, tag) => {
 
         // TODO: API call
-        const response = await fetch(`${host}/api/notes/addnote`, {
+        const response = await fetch (`${host}/api/notes/addNote`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json',
-                'auth-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU4ZDE3M2E1OTQ3MDAzOWY0OTNlZTc5In0sImlhdCI6MTcwMzc0ODg0Nn0.8Y0nby8aA4XXadmcjjDr6J1W7P3fGS2LlvjWWxfsdAY"
+                'content-Type' : 'application/json',
+                'auth-token' : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU4ZDE3M2E1OTQ3MDAzOWY0OTNlZTc5In0sImlhdCI6MTcwMzc0ODg0Nn0.8Y0nby8aA4XXadmcjjDr6J1W7P3fGS2LlvjWWxfsdAY'
             },
             body: JSON.stringify({title, description, tag})
+            
         })
-        const json = await response.json()
-
-
+        
+        
 
         // console.log("Adding a new note")
         const note = {
@@ -103,14 +103,28 @@ const NoteState = (props) => {
             "__v": 0
         }
         // setNotes(notes.push(note))
+        const json = await response.json()
+        console.log(note)
         setNotes(notes.concat(note))
+
     }
     
 
 
     // Delete a Note
-    const deleteNote = (id) => {
+    const deleteNote = async (id) => {
         // TODO: API call
+        const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+                'auth-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjU4ZDE3M2E1OTQ3MDAzOWY0OTNlZTc5In0sImlhdCI6MTcwMzc0ODg0Nn0.8Y0nby8aA4XXadmcjjDr6J1W7P3fGS2LlvjWWxfsdAY"
+            },
+            
+        })
+        const json = await response.json()
+
+
         console.log("Deleting note with is " + id)
         const newNote = notes.filter((note) => { return note._id !== id })
         setNotes(newNote)

@@ -376,9 +376,20 @@ In res we have send auth token. If some body give me this auth token i can conve
   We have made the global var host for which we can change the host and copying the url of UpdateNotes.
   So whatever we have did in the backend like all work of API we are doing that i client side
   But we have error of CORS Policy. He say that browser se API request hum nahi kar sakte. So we are installing a package
-  in backend 'npm install cors'. Cuz it has no relation with frontend and also adding some lines in index.js
+  in backend 'npm install cors'. 
+  Cuz it has no relation with frontend and also adding some lines in index.js
   But still we are getting errors of key. So now all notes has to be fetch from Fetch API
   So notesInitial we update using Fetch API. So we are making Get All Notes function
+
+
+*/
+
+// ========================== 26 ============================= //
+/*
+  Note is not deleting on UI cuz i havent made any call of API
+  We are passing UpdateNote as prop in Notes.js
+  Here we'll use useRef hook
+  useRef: We can give reference to anyone element
 
 
 */

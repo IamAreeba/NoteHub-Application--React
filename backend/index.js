@@ -4,7 +4,7 @@ const connectToMongo = require('./db')
 const express = require('express')
 
 // CORS POLICY
-var cors = require('cors')
+const cors = require('cors')
 
 connectToMongo();
 

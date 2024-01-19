@@ -55,10 +55,10 @@ router.post('/addnote', fetchuser, [
 
     try {
         const { title, description, tag } = req.body
-        const errors = validationResult(req)
-        if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() })
-        }
+        // const errors = validationResult(req)
+        // if (!errors.isEmpty()) {
+        //     return res.status(400).json({ errors: errors.array() })
+        // }
 
         const note = new Notes({
             title, description, tag, user: req.user.id
