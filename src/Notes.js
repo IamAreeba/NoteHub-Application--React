@@ -407,3 +407,18 @@ In res we have send auth token. If some body give me this auth token i can conve
 
 */
 
+// ========================== 28 ============================= //
+/*
+  If we dont have anything in else so we use '&&'
+  minLength={5} required is not working cuz we are using onClick() on btn and not onSubmit() on form
+
+*/
+
+
+// ========================== 29 ============================= //
+/*
+    
+
+
+*/
+
