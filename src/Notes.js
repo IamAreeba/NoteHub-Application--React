@@ -394,3 +394,16 @@ In res we have send auth token. If some body give me this auth token i can conve
 
 */
 
+// ========================== 27 ============================= //
+/*
+  When we click on Modal update it has to beclose after clicking and Notes has to be updated
+  Button is not the part of form on which we are actually calling the func 
+  To close modal we have to use close btn using useRef
+  Before closing the btn i have to write the logic for updating the note
+  We have to use try catch so when our API is down so our UI has to be sensible to show alerts to tell that backend is not working
+  We cant change states in React directly
+  With Json.parse we can make deep copy. We have did it in editNotes
+
+
+*/
+

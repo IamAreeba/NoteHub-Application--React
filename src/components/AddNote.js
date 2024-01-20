@@ -1,5 +1,5 @@
 
-import React, { useState, useContext }  from 'react'
+import React, { useState, useContext } from 'react'
 import noteContext from "../context/notes/noteContext"
 
 const AddNote = () => {
@@ -7,16 +7,16 @@ const AddNote = () => {
     const context = useContext(noteContext)
     const { addNote } = context
 
-    const [note, setNote] = useState({title: "", description: "", tag: "Default"})
+    const [note, setNote] = useState({ title: "", description: "", tag: "Default" })
 
     const handleClick = (e) => {
         e.preventDefault()
-        addNote(note.title, note.description, note.tag) 
+        addNote(note.title, note.description, note.tag)
     }
 
     // ...note. these 3 dots are basically spread operators
     const onChange = (e) => {
-        setNote({...note, [e.target.name]: e.target.value})
+        setNote({ ...note, [e.target.name]: e.target.value })
     }
 
     return (
@@ -40,10 +40,6 @@ const AddNote = () => {
                         <input type="text" className="form-control" id="tag" name='tag' onChange={onChange} />
                     </div>
 
-                    <div className="mb-3 form-check">
-                        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                        <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
-                    </div>
                     <button type="submit" className="btn btn-primary" onClick={handleClick}> Add Notes </button>
                 </form>
 
