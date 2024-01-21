@@ -417,7 +417,10 @@ In res we have send auth token. If some body give me this auth token i can conve
 
 // ========================== 29 ============================= //
 /*
-    
+    Developer: Toggle Screen cast mode. This is for telling u which key u have pressed
+    use .envlocal to save the URL of API
+    If u use get request so your email and password will be shown on URL
+    Use success: false for every end point
 
 
 */

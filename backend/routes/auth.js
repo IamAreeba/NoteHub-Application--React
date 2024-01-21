@@ -109,11 +109,13 @@ router.post('/login', [
     body('password', 'Password cannot be blank').exists()
 
 ], async (req, res) => {
+
+    let success = false
     const errors = validationResult(req)
     if (!errors.isEmpty()) {
-        return res.status(400).res.json({ array: errors.array() })
+        return res.status(400).json({ array: errors.array() });
     }
-
+ 
     const { email, password } = req.body
     try {
         let user = await User.findOne({ email })
@@ -127,7 +129,8 @@ router.post('/login', [
         console.log(password)
         console.log(user.password)
         if (!passwordCompare) {
-            return res.status(400).json({ error: 'Please try to login with correct credfffentials' })
+            success = false
+            return res.status(400).json({ success, error: 'Please try to login with correct credfffentials' })
         }
 
         const data = {
@@ -137,7 +140,8 @@ router.post('/login', [
         }
 
         const authToken = jwt.sign(data, JWT_SECRET)
-        res.json({ authToken })
+        success = true
+        res.json({ success, authToken })
 
     } catch (error) {
         console.log(error.message)
