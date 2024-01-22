@@ -10,7 +10,7 @@ const Login = () => {
   
 
   // Navigating to Home page if we have auth-token
-  let history = useNavigate();
+  let navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -27,7 +27,7 @@ const Login = () => {
     if(json.success){
       // Save the auth-token and redirect 
        localStorage.setItem('token', json.authtoken); 
-      history("/")
+      navigate("/")
     }
     else{
       alert("Invalid Credentials")

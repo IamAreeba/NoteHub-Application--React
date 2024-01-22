@@ -37,6 +37,7 @@ router.post('/createuser', [
     body('password', 'Password must be atleast 5 char').isLength({ min: 5 })
 
 ], async (req, res) => {
+    let success = false
     // console.log("Request" , req.body)
 
     // console.log(req.body)
@@ -48,14 +49,14 @@ router.post('/createuser', [
 
     // If errors.isEmpty haven't return true
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() })
+        return res.status(400).json({ success, errors: errors.array() })
     }
 
     try {
         let user = await User.findOne({ email: req.body.email })
         console.log(user)
         if (user) {
-            return res.status(400).json({ error: "Sorry a user with this email already exists" })
+            return res.status(400).json({ success, error: "Sorry a user with this email already exists" })
         }
 
         // Writing promise
@@ -81,12 +82,15 @@ router.post('/createuser', [
         }
 
 
+
         const authToken = jwt.sign(data, JWT_SECRET)
         console.log({ authToken })
 
         // res.json(req.body)
         // Using esx
-        res.json({ authToken })
+        success = true
+
+        res.json({ success, authToken })
     } catch (error) {
         console.log(error.message)
         res.status(500).send("Internal Server Error")
