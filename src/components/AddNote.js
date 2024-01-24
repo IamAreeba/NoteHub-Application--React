@@ -2,7 +2,7 @@
 import React, { useState, useContext } from 'react'
 import noteContext from "../context/notes/noteContext"
 
-const AddNote = () => {
+const AddNote = (props) => {
 
     const context = useContext(noteContext)
     const { addNote } = context
@@ -14,6 +14,8 @@ const AddNote = () => {
         addNote(note.title, note.description, note.tag)
         //To make the note empty after Adding note
         setNote({ title: "", description: "", tag: "" })
+
+        props.showAlert("Added Successfully", "success")
     }
 
     // ...note. these 3 dots are basically spread operators

@@ -1,8 +1,8 @@
 import React , {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
 
-
-const Signup = () => {
+// We can also get props from destructuring
+const Signup = (props) => {
 
   const [credentials, setCredentials] = useState({
     name: "",
@@ -32,9 +32,13 @@ const Signup = () => {
       // Save the auth-token and redirect 
        localStorage.setItem('token', json.authtoken); 
         navigate("/")
+        props.showAlert("Account Created Successfully", "success")
     }
     else{
-      alert("Invalid Credentials")
+      // alert("Invalid Credentials")
+
+      // Giving message and also type
+      props.showAlert("Invalid Credentials", "danger")
 
     }
 
